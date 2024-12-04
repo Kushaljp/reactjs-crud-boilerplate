@@ -8,7 +8,9 @@ import About from './About';
 import createBrowserHistory from 'history/createBrowserHistory';
 import HeaderNavContainer from './landing/HeaderNavContainer'; // eslint-disable-line import/no-named-as-default
 
-
+import SignUp from './auth/SignUp';
+import Login from './auth/Login';
+import VerifyEmail from './auth/VerifyEmail';
 
 const history = createBrowserHistory();
 
@@ -22,6 +24,12 @@ const App = () => {
                     <HeaderNavContainer />
 
                     <Switch>
+
+                        <Route path="/signup" component={SignUp} />
+                        <Route path="/login" component={Login} />
+                        <Route path="/verify-email" component={VerifyEmail} />
+
+
                         <Route exact path="/" component={Home} />
                         <Route path="/courses" component={CourseListContainer} />
                         <Route exact path="/course" component={AddOrEditCourseContainer} />
